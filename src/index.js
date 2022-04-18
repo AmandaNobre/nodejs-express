@@ -33,7 +33,6 @@ app.get("/extrato/:cpf", (request, response) => {
   const conta = contas.find((conta) => conta.cpf === cpf);
 
   if (!conta) {
-    console.log(contas, "a");
     return response.status(400).json({ error: "Não encontrado" });
   }
 
