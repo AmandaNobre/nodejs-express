@@ -7,7 +7,7 @@ app.use(express.json());
 const contas = [];
 
 //cadastrar conta
-// confirm, nome, id, statement
+// confirm, nome, id, acoes
 app.post("/conta", (request, response) => {
   const { cpf, nome } = request.body;
 
@@ -25,6 +25,19 @@ app.post("/conta", (request, response) => {
   });
 
   return response.status(201).send();
+});
+
+// buscar extrato bancario
+app.get("/extrato/:cpf", (request, response) => {
+  const { cpf } = request.params;
+  const conta = contas.find((conta) => conta.cpf === cpf);
+
+  if (!conta) {
+    console.log(contas, "a");
+    return response.status(400).json({ error: "Não encontrado" });
+  }
+
+  return response.json(conta.acoes);
 });
 
 app.listen(3333);
