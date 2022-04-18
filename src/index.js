@@ -28,5 +28,4 @@ app.delete("/cursos/:id", (request, response) => {
   return response.json(["curso5", "curso2", "curso4"]);
 });
 
-//Porta que inicia o projeto.
 app.listen(3333);
