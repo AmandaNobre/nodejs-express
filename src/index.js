@@ -1,14 +1,18 @@
-const { request } = require("express");
-const { response } = require("express");
 const express = require("express");
 
 const app = express();
+app.use(express.json);
+
+// request.params retorna os parâmetros
+// request,query retorna os query, serve para paginação ou filtro
+// request.body retorna o body
 
 app.get("/cursos", (request, response) => {
   return response.json(["curso1", "curso2", "curso3"]);
 });
 
 app.post("/cursos", (request, response) => {
+  const { body } = request.body;
   return response.json(["curso1", "curso2", "curso3", "curso4"]);
 });
 
