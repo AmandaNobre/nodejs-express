@@ -12,7 +12,6 @@ app.get("/cursos", (request, response) => {
 });
 
 app.post("/cursos", (request, response) => {
-  const { body } = request.body;
   return response.json(["curso1", "curso2", "curso3", "curso4"]);
 });
 
