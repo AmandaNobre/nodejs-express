@@ -16,7 +16,7 @@ app.put("/cursos/:id", (request, response) => {
   return response.json(["curso5", "curso2", "curso3", "curso4"]);
 });
 
-app.patch("/cursos/:id", (request, responde) => {
+app.patch("/cursos/:id", (request, response) => {
   return response.json(["curso5", "curso7", "curso3", "curso4"]);
 });
 
